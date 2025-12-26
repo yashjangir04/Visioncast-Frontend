@@ -4,5 +4,10 @@
     font-family: "Outfit", sans-serif;
 }
 @theme {
-  --color-primary:#5044E5;
+  --color-primary:#4DB6AC;
+}
+@layer base{
+  button {
+    @apply cursor-pointer;
+  }
 }
