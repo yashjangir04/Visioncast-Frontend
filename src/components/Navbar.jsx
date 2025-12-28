@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
       <>
           {/* Increased py-4 to py-6 and px sizes */}
-          <nav className="z-50 flex bg-[#191A1B] items-center justify-between w-full py-6 px-6 md:px-20 lg:px-32 xl:px-44 backdrop-blur border-b text-white border-slate-800">
+          <nav className="fixed top-0 z-50 flex bg-[#191A1B] items-center justify-between w-full py-6 px-6 md:px-20 lg:px-32 xl:px-44 backdrop-blur border-b text-white border-slate-800 min-h-20">
               <Link to={'/'} className="flex items-center gap-4">
                   {/* Increased logo height from h-8 to h-10 */}
                   <img src='logo.png' alt="VisionCast Logo" className="h-8 sm:h-10 w-auto object-contain" />
