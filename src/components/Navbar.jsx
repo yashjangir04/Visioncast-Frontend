@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { User, HelpCircle, Menu, X, Eye } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,11 +35,18 @@ const Navbar = () => {
         
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <div className="text-white font-bold text-xl tracking-wide flex items-center gap-2">
-            <Eye size={28} className="text-white" /> 
-            VISIONCAST
-          </div>
-        </Link>
+  <div className="text-white font-bold text-xl tracking-wide flex items-center gap-2">
+    
+    {/* REPLACE THE EYE COMPONENT WITH THIS: */}
+    <img 
+      src={logo} 
+      alt="VisionCast Logo" 
+      className="h-8 w-8 object-contain" 
+    />
+    
+    VISIONCAST
+  </div>
+</Link>
 
         {/* Desktop Links - UPDATED WITH ANIMATION */}
         <div className="hidden md:flex items-center gap-8 text-sm font-medium">
