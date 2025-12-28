@@ -1,9 +1,22 @@
 import { useState } from "react";
+import gsap from "gsap";
+import {useGSAP } from "@gsap/react";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
 
 import { Link, useNavigate } from "react-router-dom";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
+
+  useGSAP(() => {
+    gsap.fromTo("nav", {
+        y : "-100%",
+    }, {
+        y : 0,
+        duration : 0.4,
+        // ease : "sine.in"
+    });
+  });
 
   return (
       <>
@@ -26,7 +39,7 @@ const Navbar = () => {
                           className="relative group py-2 text-lg text-gray-300 hover:text-white transition-colors"
                       >
                           {item}
-                          <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-primary transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
+                          <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
                       </Link>
                   ))}
               </div>
