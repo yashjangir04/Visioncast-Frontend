@@ -1,13 +1,57 @@
+/* --- 1. FONTS (From Your Branch) --- */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* --- 2. TAILWIND SETUP (Standard) --- */
 @import "tailwindcss";
-*{
+
+/* --- 3. GLOBAL STYLES (Combined) --- */
+@layer base {
+  :root {
+    /* From Your Branch: The Primary Color */
+    --color-primary: #4DB6AC;
+
+    /* From Friend's Branch: Dark Background & Text Color */
+    background-color: #09090b; 
+    color: white;
+    
+    /* Font Family (Both wanted this) */
     font-family: "Outfit", sans-serif;
-}
-@theme {
-  --color-primary:#4DB6AC;
-}
-@layer base{
+  }
+
+  /* From Your Branch: Button fix */
   button {
     @apply cursor-pointer;
   }
+}
+
+/* --- 4. ANIMATIONS (From Friend's Branch) --- */
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+  .animate-bounce-slow {
+    animation: bounce 3s infinite;
+  }
+  .animate-bounce-short {
+    animation: bounceShort 0.5s 1;
+  }
+}
+
+/* --- 5. KEYFRAMES (From Friend's Branch) --- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bounceShort {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }

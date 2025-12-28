@@ -1,22 +1,44 @@
-import { useState } from "react";
+import React, { useState } from 'react';
+import { User, HelpCircle, Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import logo from '../assets/logo.png';
+
+// --- GSAP IMPORTS ---
 import gsap from "gsap";
-import {useGSAP } from "@gsap/react";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
-import { Link, useNavigate } from "react-router-dom";
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
+  // --- GSAP ANIMATION ---
+  // This animates the Navbar sliding down from the top on load
   useGSAP(() => {
-    gsap.fromTo("nav", {
-        y : "-100%",
-    }, {
-        y : 0,
-        duration : 0.4,
-        // ease : "sine.in"
-    });
+    gsap.fromTo("nav", 
+      { y: "-100%" }, 
+      { y: 0, duration: 0.5, ease: "power2.out" }
+    );
   });
+
+  const isActive = (path) => location.pathname === path;
+
+  // --- HELPER COMPONENT ---
+  const NavItem = ({ to, label }) => {
+    const active = isActive(to);
+    return (
+      <Link 
+        to={to} 
+        className="relative group flex flex-col items-center justify-center text-sm font-medium text-gray-400 hover:text-white transition-colors py-1"
+      >
+        <span className={active ? 'text-white font-bold' : ''}>{label}</span>
+        <span 
+          className={`absolute bottom-0 left-0 w-full h-[2px] bg-teal-400 origin-center transition-transform duration-300 ease-out
+            ${active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}
+          `}
+        ></span>
+      </Link>
+    );
+  };
 
   return (
       <>
@@ -59,4 +81,5 @@ const Navbar = () => {
       </>
   );
 };
+
 export default Navbar;
