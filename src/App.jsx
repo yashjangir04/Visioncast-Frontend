@@ -11,6 +11,8 @@ import Main from "./pages/Main"
 
 import useVideos from "./hooks/useVideos";
 import MainLayout from "./layouts/MainLayout";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
 
 function App() {
   const { videos } = useVideos(); // ✅ now defined
@@ -25,11 +27,13 @@ function App() {
           <Route path="/library" element={<LibraryPage videos={videos} />} />
           <Route path="/generate" element={<GenerationPage />} />
           <Route path="/app/:video" element={<Main />} />
+          <Route path="/auth/login" element={<Login />} />
+          <Route path="/auth/signup" element={<Signup />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
         </Route>
 
         {/* Auth & Misc */}
-        <Route path="/auth/login" element={<Login />} />
-        <Route path="/auth/signup" element={<Signup />} />
       </Routes>
     </div>
   );

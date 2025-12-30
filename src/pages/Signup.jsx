@@ -42,7 +42,7 @@ const Register = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-[#242527] flex items-center justify-center px-4">
+    <div className="w-full min-h-screen bg-[#18181b] flex items-center justify-center px-4">
       <div className="w-full max-w-120 bg-[#1c1d1f] p-10 rounded-2xl shadow-xl">
         <h1 className="text-white text-3xl font-semibold text-center mb-6">
           Register

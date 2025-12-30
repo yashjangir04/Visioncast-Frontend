@@ -132,7 +132,8 @@ const UploadSection = ({ onFileSelect, selectedFile }) => {
                   value={link}
                   onChange={handleLinkChange}
                   placeholder="Paste Video Link"
-                  className={`w-full bg-gray-800/50 text-center text-gray-300 py-3.5 px-6 rounded-lg border transition-all duration-300 placeholder-gray-500 focus:bg-gray-800
+                  disabled
+                  className={`w-full cursor-not-allowed bg-gray-800/50 text-center text-gray-300 py-3.5 px-6 rounded-lg border transition-all duration-300 placeholder-gray-500 focus:bg-gray-800
                     ${error ? 'border-red-500 focus:ring-2 focus:ring-red-500/20' : 'border-gray-700 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 outline-none'}`}
               />
               
