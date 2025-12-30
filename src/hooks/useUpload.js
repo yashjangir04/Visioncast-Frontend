@@ -13,7 +13,7 @@ export default function useUpload(navigate) {
     formData.append("language", options.language);
     formData.append("skip_silence", options.skipSilence);
 
-    const resp = await fetch("http://localhost:3000/file/upload", {
+    const resp = await fetch("https://visioncast-backend-1.onrender.com/file/upload", {
       method: "POST",
       body: formData,
       headers : {
@@ -55,7 +55,7 @@ export default function useUpload(navigate) {
       }
     }
 
-    const updatedVideo = await axios.post("http://localhost:3000/file/update", {
+    const updatedVideo = await axios.post("https://visioncast-backend.onrender.com/file/update", {
       url,
       transcript
     }, {

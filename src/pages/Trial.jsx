@@ -14,7 +14,7 @@ function Trial() {
     formData.append('video', file);
 
     try {
-      const response = await fetch('http://localhost:3000/file/upload', {
+      const response = await fetch('https://visioncast-backend-1.onrender.com/file/upload', {
         method: 'POST',
         body: formData,
       });

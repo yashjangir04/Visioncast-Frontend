@@ -22,7 +22,7 @@ const Register = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/user/register",
+        "https://visioncast-backend-1.onrender.com/user/register",
         { name, email, password }
       );
 

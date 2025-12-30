@@ -7,7 +7,7 @@ export default function useVideos() {
     const token = localStorage.getItem("token");
     const fetchVideos = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/videos", {
+        const res = await fetch("https://visioncast-backend.onrender.com/api/videos", {
           method: "GET",
           headers: {
             "Authorization": `Bearer ${token}`

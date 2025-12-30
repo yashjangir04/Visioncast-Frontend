@@ -29,7 +29,7 @@ const Main = () => {
     // console.log(token);
 
     const getData = async () => {
-      const videoDetails = await axios.post("http://localhost:3000/file/details", {
+      const videoDetails = await axios.post("https://visioncast-backend-1.onrender.com/file/details", {
         video
       }, {
         headers : {
